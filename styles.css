@@ -1,0 +1,50 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #fcfcfc;
+  font-family: sans-serif;
+  margin: 0;
+}
+
+nav {
+  background-color: red;
+  color: white;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  font-size: xx-large;
+}
+ul li {
+  display: inline-block;
+}
+
+main {
+  padding-top: 100px;
+
+  padding-bottom: 4rem;
+  font-size: xx-large;
+}
+
+footer {
+  background-color: #000000;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  word-spacing: 0.5rem;
+  letter-spacing: 0.25rem;
+}
+footer p {
+  margin-left: 15px;
+  font-size: larger;
+}
+
+.icon {
+  float: right;
+}

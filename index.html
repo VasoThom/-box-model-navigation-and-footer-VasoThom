@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Navigation and Footer</title>
+  </head>
+  <body>
+    <nav> 
+
+      <ul>
+          <li><a href="#">Home</a></li>
+         <li><a href="#">about</a></li>
+         <li><a href="#">Work</a></li>
+         <li><a href="#">Contact</a></li>
+         <div class="icon"><img src="./icon-cat.png" alt="icons" /></div>
+      </ul> 
+  </nav>
+     
+    <main>
+      <section>
+        <h2>Navigation</h2>
+        <p>
+          Unter einer Navigation versteht man gewöhnlich in Abgrenzung zu
+          anderen Navigationstechniken die Haupt-Navigation einer Webseite, mit
+          der sie bequem die Unterseiten des Projekts erreichen können.
+          Ursprünglich als reine Liste einzelner Links angelegt, wuchs mit
+          steigendem Umfang der Webprojekte das Bedürfnis, die Links zu
+          sortieren und übersichtlich zu präsentieren. Dieses Kapitel zeigt, wie
+          eine Navigation aufgebaut werden sollte. Diese Grundstruktur wird in
+          den folgenden Kapiteln als Grundlage für umfangreichere Navigationen
+          verwendet. Für die Navigationsleiste wird im Allgemeinen eine
+          Aufzählungsliste verwendet.
+          <br />
+          Hiermit haben Sie nicht nur ein strukturelles Element, das dem Sinn
+          einer Navigation, nämlich der Auflistung von Verweisen, recht gut
+          entspricht, sondern auch gleich drei verschachtelte Elemente, die Sie
+          über CSS formatieren können: ul, li und a. <br />
+          <strong>Oben oder unten?</strong>
+
+          Wo sollte ich die Navigation im Markup der Webseite platzieren? Oben
+          wäre sie gleich erreichbar - falls Sie unten wäre, könnten Nutzer
+          gleich auf die Inhalte zugreifen und die Navigation könnte per CSS
+          beliebig positioniert werden. Es ist eine Konvention, dass
+          Inhaltsverzeichnisse am Anfang eines Buches stehen. Auch bei Webseiten
+          sucht der Nutzer von oben links nach unten rechts und erwartet die
+          Navigation oben.[1][2] (Dass Sie nicht die halbe Seite einnehmen und
+          mit CSS entsprechend formatiert werden sollte, wird in den
+          Folgekapiteln besprochen.) Die visuelle Reihenfolge sollte der
+          Reihenfolge im DOM entsprechen; andernfalls dürften sehende
+          Tastaturnutzer und sehende Screenreader-Nutzer ziemlich verwirrt sein.
+          Um Nutzer von Screenreadern gleich zum Inhalt zu führen, können Sie
+          Skip-Links verwenden.
+          <br />
+          <strong>Verlinke nicht auf die aktuelle Seite</strong>
+          <br />
+          Um Nutzer eine Orientierung zu geben, auf welcher Seite sie sich
+          gerade befinden, sollte die aktuelle Seite deutlich gekennzeichnet und
+          nicht anklickbar sein. Früher wurde das Navigationselement der
+          aktuellen Seite mit einem Klassennamen oder einem span-Element anstatt
+          des Links gekennzeichnet. Diese Lösungen haben den Nachteil, dass sie
+          nicht von Screenreadern und Suchmaschinen gelesen werden können. Die
+          aktuelle Seite wird mit dem ARIA-Attribut aria-current="page"
+          ausgezeichnet. So können auch Suchmaschinen und Screenreader erkennen,
+          dass dies die aktuelle Seite ist. Mit dem Attributselektor kann dieser
+          Menü-Punkt mit CSS formatiert werden.
+          <br />
+          <strong> Verweise zu Schaltfläche machen </strong>
+          <br />
+          Damit wir jetzt anklickbare Schaltflächen bekommen, stylen wir die
+          einzelnen Elemente mit CSS: Entfernen der Aufzählungszeichen Breite
+          und Innenabstand Hintergrund- und Textfarbe Empfehlung: Um eine
+          einheitliche Darstellung zu erreichen, können Sie zunächst die
+          unterschiedlichen Voreinstellungen der Browser für Listen
+          überschreiben.
+          <br />
+          <strong> Rollover-Effekt</strong>
+          <br />
+          Linkelemente können per Maus oder per Tastatur ausgewählt werden. Über
+          die Pseudoklasse :hover bzw. :focus können Sie ausgewählte Elemente
+          selektieren und ihre Formatierung ändern. Durch display: block nimmt
+          das Linkelement die gesamte zur Verfügung stehende Breite (=Breite des
+          Listenelements innerhalb der 10em breiten Liste) ein. Ausgewählte
+          Verweise werden durch eine Änderung der Hintergrundfarbe (sowie dazu
+          passend der Schriftfarbe) gekennzeichnet. Hierdurch ergibt sich ein
+          Rollover-Effekt. Um dies eleganter wirken zu lassen, wird die
+          Farbänderung bei :hover oder :focus durch transition um 0.25 Sekunden
+          verzögert, sodass ein Nachglüh-Effekt entsteht. Neu in diesem Beispiel
+          hinzugekommen ist auch, dass die aktuelle Seite nicht verlinkt wird.
+          Dies erleichtert die Benutzbarkeit, da der Standort erkennbar ist und
+          nicht mit einem (in diesem Fall ja nutzlosen) Link verwechselt werden
+          kann. Hierzu wird das Link-Element für den aktuellen Menüpunkt durch
+          ein aria-current-Attribut ergänzt.
+          <br />
+          <strong> Vertikal oder horizontal?</strong>
+          <br />
+          Sie können eine Navigationsleiste mit wenigen Menüpunkten auch
+          horizontal anordnen (Quernavigation). Hierfür existieren mehrere
+          verschiedene Möglichkeiten mit unterschiedlichen Vor- und Nachteilen.
+          Die einfachere Möglichkeit ist, die li-Elemente per display: inline
+          darzustellen. Dies ermöglicht auch deren Zentrierung über eine auf das
+          Eltern-Element angewandte Eigenschafts-/Wertkombination von
+          text-align: center. Einen Nachteil hat diese Methode jedoch: Bei einem
+          Umbruch der Navigationsleiste in zu kleinen Browserfenstern kommt es
+          zu Überlagerungen. Dieser Effekt kann zwar auch bewusst zu
+          gestalterischen Zwecken eingesetzt werden, verschlechtert allerdings
+          die Nutzbarkeit. Achten Sie darauf, dass in den Menütexten kein
+          Zeilenumbruch stattfindet. Falls die Menüpunkte Leerzeichen enthalten,
+          können Sie mithilfe von white-space: nowrap; den automatischen
+          Zeilenumbruch verbieten.
+        </p>
+      </section>
+      <h2> Footer </h2>
+      <p>
+        Das HTML -footer- Element repräsentiert eine Fußzeile für den nahestehendsten Sektionsinhalt oder das Sektionsquellen Element. Eine Fußzeile enthält typischerweise Informationen über den Autor der Sektion, die Copyright-Daten oder Links zu verwandten Dokumente.
+      </p>
+      <section>
+        
+    </main>
+
+
+    <footer>
+           <p> This is the Footer</p>
+        
+    </footer>
+  </body>
+</html>
